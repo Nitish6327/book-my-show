@@ -1,10 +1,15 @@
 import React from 'react'
 import '../Css/radiocomponents.css'
 
-const Radiocomponents = ({text}) => {
+
+const Radiocomponents = ({text,changeSelection,data}) => {
+  const handleChecked=(val)=>{
+    changeSelection(val)
+  }
   return (
     <div>
-        <div className='form-check-label'></div>
+        <div  name ={text}className='form-check-label' onClick={()=>{handleChecked(text)}}></div>
+        
       <span className='text'>{text}</span>
     </div>
   )

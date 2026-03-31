@@ -1,10 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { moviesList } from '../data'
 import Radiocomponents from './Radiocomponents' 
 import '../Css/selectMovie.css'; 
+import BsContext from '../Context/BScontext';
 
 
-const selectMovie=()=>{
+const SelectMovie=()=>{
+  const context=useContext(BsContext)
+  const{movie,changeMovie}=context
+  const handleChangeMovie=(val)=>{
+    changeMovie(val)
+    window.localStorage.setItem("movie",val)
+  }
   return (
     <>
     <h1 className='SM_Heading'>Select A movie :-</h1>
@@ -13,7 +20,7 @@ const selectMovie=()=>{
 
       {moviesList.map((el,index) =>  {
         return(
-            <Radiocomponents text={el} key={index}/>
+            <Radiocomponents text={el} key={index} data={movie} changeSelection={handleChangeMovie} />
         )
       })}
     </div>
@@ -21,4 +28,4 @@ const selectMovie=()=>{
   )
 }
 
-export default selectMovie
+export default SelectMovie

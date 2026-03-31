@@ -1,5 +1,5 @@
 import React from 'react'
-import SelectMovie from '../components/selectMovie'
+import SelectMovie from '../components/SelectMovie'
 import LastBookingdetails from '../components/lastBookingdetails'
 import TimeSchedule from '../components/TimeSchedule'
 import SelectSeats from '../components/SelectSeat'
