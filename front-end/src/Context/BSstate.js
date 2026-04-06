@@ -49,7 +49,7 @@ const BsState = (props) => {
     }
   };
 
-  // ✅ GET BOOKING
+
   const handleGetBooking = async () => {
     try {
       const response = await fetch(`http://localhost:8080/api/booking`, {
@@ -57,13 +57,12 @@ const BsState = (props) => {
       });
 
       const data = await response.json();
-      setLastBookingDetails(data.data); // FIXED
+      setLastBookingDetails(data.data); 
     } catch (error) {
       console.log(error);
     }
   };
 
-  // ✅ LOAD FROM LOCAL STORAGE
   useEffect(() => {
     const movie = window.localStorage.getItem("movie");
     const slot = window.localStorage.getItem("slot");
@@ -85,7 +84,7 @@ const BsState = (props) => {
         changeNoOfSeats,
         lastBookingDetails,
         handleGetBooking,
-        handlePostBooking, // ✅ FIXED NAME
+        handlePostBooking, 
         errorMessage,
         errorPopup,
         setErrorMessage,
